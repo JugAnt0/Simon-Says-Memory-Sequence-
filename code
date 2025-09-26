@@ -1,0 +1,36 @@
+import random
+import time
+
+def simon_says():
+    print("🎵 Welcome to Simon Says (Memory Sequence)!")
+    print("Repeat the sequence of colors. Each round adds one more.\n")
+    colors = ["Red", "Blue", "Green", "Yellow"]
+    sequence = []
+    round_num = 1
+
+    while True:
+        print(f"\n--- Round {round_num} ---")
+        # Add a new random color to the sequence
+        sequence.append(random.choice(colors))
+
+     
+        print("Watch carefully!")
+        for color in sequence:
+            print(color)
+            time.sleep(0.8)  # pause so player can memorize
+        time.sleep(0.5)
+        print("\n" * 20)  # clear screen (fake)
+
+   
+        print("Now it’s your turn! Enter the sequence:")
+        for i, color in enumerate(sequence, start=1):
+            guess = input(f"Color {i}: ").capitalize()
+            if guess != color:
+                print(f"❌ Wrong! The correct sequence was: {sequence}")
+                print(f"🏆 You reached Round {round_num}!")
+                return
+        print("✅ Correct!")
+        round_num += 1
+
+
+simon_says()
