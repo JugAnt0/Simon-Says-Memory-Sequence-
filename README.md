@@ -23,4 +23,4 @@ Each round adds one more item to the sequence, making the game progressively har
 5. The player must recall the full sequence correctly.  
 6. The game continues until the player makes an error.  
 
-Example round:  
+
